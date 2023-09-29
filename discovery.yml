@@ -1,0 +1,9 @@
+
+server:
+  port: 8761   #Port for the Eureka server
+eureka:
+  client:
+    register-with-eureka: false # The Eureka server should not register itself
+    fetch-registry: false # The Eureka server should not fetch registry information
+    # service-url:
+    #   defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
