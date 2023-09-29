@@ -1,0 +1,44 @@
+
+
+
+
+
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka
+spring:
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          issuer-uri: http://localhost:1111/auth/realms/mini-project-spring
+          jwk-set-uri: http://localhost:1111/auth/realms/mini-project-spring/protocol/openid-connect/certs
+
+server:
+  port: 8081
+keycloak:
+  realm: mini-project-spring
+  resource: app-user
+  auth-server-url: http://localhost:1111/auth/ #docker container
+  credentials:
+    username: 'admin'
+    password: 'admin'
+    client-id: 'app-user'
+    secret: 'AZlE6CZqsNCc18cwazosddlyrFNk5pFt'
+    provider: secret
+
+openapi:
+  oAuthFlow:
+    tokenUrl=http://localhost:1111/auth/realms/mini-project-spring/protocol/openid-connect/token
+
+
+logging:
+  level:
+    org.springframework.web: debug
+
+management:
+  tracing:
+    sampling:
+      probability: 1.0
