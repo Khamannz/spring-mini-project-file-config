@@ -26,8 +26,7 @@ spring:
 #  profiles:
 #    active:
 #      - ${ACTIVE_SPRING_PROFILE:dev}
-  application:
-    name: api-gateway-service
+
 springdoc:
   enable-native-support: true
   api-docs:
@@ -43,9 +42,9 @@ springdoc:
       - url: /users/v3/api-docs
         name: Keycloak Admin Client
         primaryName: Users Service
-      - url: /task-service/v3/api-docs
-        name: Task Service
-        primaryName: Task Service
+#      - url: /task-service/v3/api-docs
+#        name: Task Service
+#        primaryName: Task Service
 
 
         #When you want to disable swagger UI based on profiles,
