@@ -5,6 +5,8 @@ eureka:
     register-with-eureka: false
 server:
   port: 8222
+  servlet:
+    context-path: /
 spring:
   cloud:
     gateway:
@@ -20,3 +22,5 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/groups/**
+
+
