@@ -17,6 +17,8 @@ spring:
           jwk-set-uri: http://localhost:1111/auth/realms/mini-project-spring/protocol/openid-connect/certs
 
 server:
+  servlet:
+    context-path: /
   port: 8081
 keycloak:
   realm: mini-project-spring
