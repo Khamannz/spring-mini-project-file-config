@@ -5,21 +5,9 @@ eureka:
     register-with-eureka: false
 server:
   port: 8222
-  servlet:
-    context-path: /
-
-openapi:
-  service:
-    title: price-service doc #title that you will want to display in the swagger ui
-    version: 1.0.0
-    url: http://localhost:8080 #api gateway url
-springdoc:
-  api-docs:
-    path: /price-service/v3/api-docs #these urls will used to load the swagger ui of this service by the api gateway
-  swagger-ui:
-    path: /price-service/swagger-ui.html
-
-
+  server:
+    servlet:
+      context-path: /
 spring:
   cloud:
     gateway:
@@ -35,5 +23,41 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/groups/**
+  profiles:
+    active:
+      - ${ACTIVE_SPRING_PROFILE:dev}
+  application:
+    name: api-gateway-service
+springdoc:
+  enable-native-support: true
+  api-docs:
+    enabled: true
+  swagger-ui:
+    enabled: true
+    path: /swagger-ui.html
+    config-url: /v3/api-docs/swagger-config
+    urls:
+      - url: /v3/api-docs
+        name: API Gateway Service
+        primaryName: API Gateway Service
+      - url: /users/v3/api-docs
+        name: Keycloak Admin Client
+        primaryName: Users Service
+      - url: /task-service/v3/api-docs
+        name: Task Service
+        primaryName: Task Service
 
 
+        #When you want to disable swagger UI based on profiles,
+         # can use following properties in respective environment.
+        #  For an example to disable logs in production environment.
+#spring:
+#  config:
+#    activate:
+#      on-profile: prod
+#
+#springdoc:
+#  swagger-ui:
+#    enabled: false
+#  api-docs:
+#    enabled: false
