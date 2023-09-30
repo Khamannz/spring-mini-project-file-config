@@ -23,9 +23,9 @@ spring:
           uri: http://localhost:8081
           predicates:
             - Path=/api/v1/groups/**
-  profiles:
-    active:
-      - ${ACTIVE_SPRING_PROFILE:dev}
+#  profiles:
+#    active:
+#      - ${ACTIVE_SPRING_PROFILE:dev}
   application:
     name: api-gateway-service
 springdoc:
