@@ -25,7 +25,7 @@ keycloak:
   resource: app-user
   auth-server-url: http://localhost:1111/auth/ #docker container
   credentials:
-    username: 'mann'
+    username: 'admin'
     password: '123'
     client-id: 'app-user'
     secret: '9CGz4anfkrRxZQd6qzl4CErRBGaDbuvH'
