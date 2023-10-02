@@ -2,7 +2,7 @@
 
 eureka:
   client:
-    register-with-eureka: true
+    register-with-eureka: false
 server:
   port: 8222
   server:
