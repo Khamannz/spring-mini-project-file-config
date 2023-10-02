@@ -44,9 +44,9 @@ springdoc:
   swagger-ui:
     path: /keycloak-admin-client/swagger-ui.html
 
-logging:
-  level:
-    org.springframework.web: debug
+#logging:
+#  level:
+#    org.springframework.web: debug
 
 management:
   tracing:
