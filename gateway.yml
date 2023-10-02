@@ -39,7 +39,7 @@ springdoc:
       - url: /v3/api-docs
         name: API Gateway Service
         primaryName: API Gateway Service
-      - url: /keycloak-admin-client/v3/api-docs
+      - url: keycloak-admin-client/v3/api-docs
         name: Keycloak Admin Client
         primaryName: Users Service
 #      - url: /task-service/v3/api-docs
