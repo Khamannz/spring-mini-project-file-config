@@ -9,6 +9,8 @@ eureka:
     service-url:
       defaultZone: http://localhost:8761/eureka
 spring:
+  application:
+    name: keycloak-admin-client
   security:
     oauth2:
       resourceserver:
