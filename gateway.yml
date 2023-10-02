@@ -58,5 +58,5 @@ springdoc:
 #springdoc:
 #  swagger-ui:
 #    enabled: false
-#  api-docs:
+#  api-docs:,
 #    enabled: false
